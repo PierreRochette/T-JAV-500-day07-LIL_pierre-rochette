@@ -14,4 +14,5 @@ public class Solo<T> {
         this.value = value;
     }
 
+
 }
