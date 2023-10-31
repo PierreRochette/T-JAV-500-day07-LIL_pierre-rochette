@@ -9,6 +9,16 @@ public class Warrior extends Character {
         System.out.println(name + ": My name will go down in history!");
     }
 
+    public Warrior(String name, int power) {
+        super(name, "Warrior");
+        this.life = 100;
+        this.agility = 8;
+        this.strength = 10;
+        this.wit = 3;
+        this.capacity = power;
+        System.out.println(name + ": My name will go down in history!");
+    }
+
     @Override
     public void attack(String weapon) {
 
