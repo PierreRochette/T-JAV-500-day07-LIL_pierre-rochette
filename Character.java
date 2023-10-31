@@ -87,16 +87,23 @@ public abstract class Character implements Movable, Comparable<Character> {
             return Integer.compare(this.capacity, otherCharacter.capacity);
         }
 
-        if ((this instanceof Warrior && otherCharacter instanceof Mage)||(this instanceof Mage && otherCharacter instanceof Warrior)) {
+        if ((this instanceof Warrior && otherCharacter instanceof Mage) || (this instanceof Mage && otherCharacter instanceof Warrior)) {
 
             if (this instanceof Warrior && this.capacity % otherCharacter.capacity == 0) {
                 return 1;
-            } else {
-                return -1;
             }
 
-        }
+            if (this instanceof Mage) {
+                if (this.capacity % otherCharacter.capacity == 0) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
 
+
+        }
         return 0;
     }
+
 }
